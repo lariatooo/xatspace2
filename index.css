@@ -1,0 +1,224 @@
+#profile-container {background:none; width: 800px;}
+
+body {background-color: #000000;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2392fff3' fill-opacity='0.62'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+
+::-webkit-scrollbar {width: 3px;} 
+::-webkit-scrollbar-track {border: 1px solid #ffffff ;background-color:transparent;}  
+::-webkit-scrollbar-thumb {border:1px solid  #ffffff;background-color: #ffffff; }
+
+					/*FONTS*/
+
+@font-face {font-family: grafiti;
+	src: url(https://dl.dropbox.com/s/22fnvuhqn1kuegs/Mersey%20Cowboy.otf?dl=0);}
+    
+@font-face {font-family: algreya;
+	src: url(https://dl.dropbox.com/s/m0jwp90cuuo9zbl/Alegreya-BlackItalic.ttf?dl=0);}
+
+p{color: #000; font-size: 14px; font-family: algreya; margin-bottom: 15px;}
+strong{color: #ab2526;}
+em{color: #d96a25;}
+h1 {color: #ffffff; font-family: grafiti; font-size: 30px; text-align: center;}
+
+
+.title {font-family: grafiti;font-size: 80px;color: #ebeff0;text-shadow: 5px 5px #54b3af; left: 200px; position: absolute; z-index: 100;}
+
+					/*LAYOUT*/
+
+#whole {width: 800px; height: 400px; top: 75px; overflow: hidden; position: absolute;}
+
+body p, h1{opacity: 0;}
+body:hover p{opacity: 1;}
+body:hover h1{opacity: 1;}
+body:hover .left{left: 0px; width: 400px;}
+body:hover .right{width: 400px;}
+
+.left {
+  width: 100px; height: 400px;
+  left: 300px; top: 0px;
+  background-color:#ebeff0;
+  position: absolute;
+  overflow: hidden;
+  -webkit-transition: 1s; -moz-transition: 1s; -o-transition: 1s; transition: 1s;
+-webkit-transition-delay: .5s; -moz-transition-delay: .5s; -o-transition-delay: .5s; transition-delay: .5s;
+}
+.left img{min-width:100%; width: 100%;}
+
+.right {
+  width: 150px; height: 400px;
+  background-color: #54b3af;
+    position: absolute;
+left: 400px; top: 0px; 
+  overflow: hidden;
+  -webkit-transition: 1s; -moz-transition: 1s; -o-transition: 1s; transition: 1s;
+-webkit-transition-delay: .5s; -moz-transition-delay: .5s; -o-transition-delay: .5s; transition-delay: .5s;
+}
+
+/*left side shtuffs */
+.t {
+  width: 350px; height: 350px; overflow: hidden; z-index: 1;opacity: 1;
+  top: 20px; left: 30px;
+  background-color: blue; position: absolute;
+  -webkit-clip-path: polygon(0 0, 50% 50%, 100% 0);
+clip-path: polygon(0 0, 50% 50%, 100% 0);
+filter: sepia(60%);
+}
+
+.l {
+  width: 350px; height: 350px; overflow: hidden; z-index: 2;opacity: 1;
+  top: 30px; left: 20px;
+  background-color: red; position: absolute;
+  -webkit-clip-path: polygon(0 0, 0% 100%, 50% 50%);
+clip-path: polygon(0 0, 0% 100%, 50% 50%);
+filter: sepia(60%);
+}
+
+
+.r {
+  width: 350px; height: 350px; overflow: hidden; z-index: 3;opacity: 1;
+  top: 30px; left: 40px;
+  background-color: green; position: absolute;
+  -webkit-clip-path: polygon(50% 50%, 100% 100%, 100% 0%);
+clip-path: polygon(50% 50%, 100% 100%, 100% 0%);
+filter: sepia(60%);
+}
+
+.b {
+  width: 350px; height: 350px; overflow: hidden; z-index: 4;opacity: 1;
+  top: 35px; left: 30px;
+  background-color: yellow; position: absolute;
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 50% 50%);
+clip-path: polygon(0 100%, 100% 100%, 50% 50%);
+filter: sepia(60%);
+}
+
+
+/*pulse effect */
+.t:hover {
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+     -webkit-filter: contrast(100%); /* Safari 6.0 - 9.0 */;
+}
+
+.t:visited{ 
+  animation: pulse 1s infinite;
+  animation-timing-function: linear; 
+       -webkit-filter: invert(100%); /* Safari 6.0 - 9.0 */
+}
+
+.t:active{ 
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+       -webkit-filter:  contrast(150%); /* Safari 6.0 - 9.0 */
+filter: contrast(150%);
+}
+.l:hover {
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+     -webkit-filter: contrast(100%); /* Safari 6.0 - 9.0 */
+}
+
+.l:visited{ 
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+     -webkit-filter: hue-rotate(100deg); /* Safari 6.0 - 9.0 */
+}
+
+.l:active{ 
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+     -webkit-filter: hue-rotate(100deg); /* Safari 6.0 - 9.0 */
+filter: contrast(150%);
+}
+.r:hover {
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+-webkit-filter: contrast(100%); /* Safari 6.0 - 9.0 */
+}
+
+.r:visited{ 
+  animation: pulse 1s infinite;
+  animation-timing-function: linear; 
+     -webkit-filter: hue-rotate(100deg); /* Safari 6.0 - 9.0 */
+  filter: hue-rotate(100deg);  
+}
+
+.r:active{ 
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+     -webkit-filter: hue-rotate(100deg); /* Safari 6.0 - 9.0 */
+ filter: contrast(150%); 
+}
+.b:hover {
+  animation: pulse 1s infinite;
+  animation-timing-function: linear; 
+-webkit-filter: contrast(100%); /* Safari 6.0 - 9.0 */
+}
+
+.b:visited{ 
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+       -webkit-filter: invert(100%); /* Safari 6.0 - 9.0 */
+  filter: invert(100%);
+}
+
+.b:active{ 
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+       -webkit-filter: invert(100%); /* Safari 6.0 - 9.0 */
+  filter: contrast(150%);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1);
+  100% { transform: scale(1); }
+  }
+}
+
+/*right side shtuffs*/
+.right div{margin-left: 10px; margin-top: 30px; width: 380px; height: 360px; overflow: scroll;}
+
+			/*link ghost - DO NOT ALTER OR REMOVE ANYTHING BELOW THIS LINE*/
+.strip {position: fixed; width: 50px; height: 50px; top: 90%; left: 90%; overflow: hidden; border-radius: 50%;}
+.strip img{max-width: 100%;}
+.strip:hover {  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+     -webkit-filter: invert(100%); /* Safari 6.0 - 9.0 */
+  filter: invert(100%);  }
+
+.FriendItemPic {
+  border: 0px solid #000;
+  border-radius: 5%;
+  width: 100px;
+  height: 100px;
+  margin: 1%;
+  padding: 0;
+  -webkit-transition: 0.5s linear;
+  -moz-transition: 0.5s linear;
+  -o-transition: 0.5s linear;
+  transition: 0.5s linear;
+}
+
+ #picture2 {
+position: fixed;
+right: 20px;
+bottom: 20px; 
+margin: auto;
+height: 300px;
+width: 300px;
+background-color: #;
+z-index: 5;
+border: #54b3af solid;
+}
+
+#picture3 {
+position: fixed;
+right: 15vh;
+bottom: -1vh; 
+margin: auto;
+height: 300px;
+width: 300px;
+background-color: #;
+z-index: 5;
+}
